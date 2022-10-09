@@ -1,2 +1,2 @@
-# SOFTmatics
+# softmatics
 NITTA SOFTmatics packages
