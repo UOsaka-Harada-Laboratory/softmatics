@@ -7,8 +7,8 @@ To display the gripper URDF description
 $ roslaunch softmatics_visualization disp_softmatics_model.launch 
 ```
 
-## Visual model
-<img src="images/visual.png" height="300">  
+## Open
+<img src="images/open.png" height="300">  
 
-## Collision model
-<img src="images/collision.png" height="300">  
+## Close
+<img src="images/close.png" height="300">  
