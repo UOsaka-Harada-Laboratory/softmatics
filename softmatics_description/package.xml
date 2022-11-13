@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>softmatics_visualization</name>
+  <name>softmatics_description</name>
   <version>1.0.0</version>
   <description>NITTA SOFTmatics model description package</description>
   <license>MIT</license>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find softmatics_visualization)/urdf/softmatics_transmission.xacro" />
+  <xacro:include filename="$(find softmatics_description)/urdf/softmatics_transmission.xacro" />
 
   <xacro:macro name="knuckle" params="prefix fingerprefix">
     <link name="${prefix}${fingerprefix}_knuckle">
@@ -12,7 +12,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://softmatics_visualization/meshes/visual/finger.stl" />
+          <mesh filename="package://softmatics_description/meshes/visual/finger.stl" />
         </geometry>
         <material name="">
           <color rgba="0.8 0.8 0.8 1" />
@@ -21,13 +21,13 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://softmatics_visualization/meshes/collision/finger.stl" />
+          <mesh filename="package://softmatics_description/meshes/collision/finger.stl" />
         </geometry>
       </collision>
     </link>
   </xacro:macro>
 
-  <xacro:include filename="$(find softmatics_visualization)/urdf/softmatics.xacro" />
+  <xacro:include filename="$(find softmatics_description)/urdf/softmatics.xacro" />
 
   <xacro:macro name="knuckle_joint" params="prefix">
     <joint name="${prefix}knuckle_joint" type="revolute">
