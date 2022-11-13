@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find softmatics_description)/urdf/softmatics_transmission.xacro" />
+  <xacro:include filename="$(find softmatics_description)/urdf/softmatics_gazebo.xacro" />
 
   <xacro:macro name="knuckle" params="prefix fingerprefix">
     <link name="${prefix}${fingerprefix}_knuckle">
@@ -15,7 +16,7 @@
           <mesh filename="package://softmatics_description/meshes/visual/finger.stl" />
         </geometry>
         <material name="">
-          <color rgba="0.8 0.8 0.8 1" />
+          <color rgba="0.0 0.2 0.7 0.8" />
         </material>
       </visual>
       <collision>
@@ -25,6 +26,16 @@
         </geometry>
       </collision>
     </link>
+
+    <gazebo reference="${prefix}${fingerprefix}_knuckle">
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <minDepth>0.001</minDepth>
+      <selfCollide>false</selfCollide>
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
   </xacro:macro>
 
   <xacro:include filename="$(find softmatics_description)/urdf/softmatics.xacro" />
@@ -35,7 +46,7 @@
       <parent link="${prefix}softmatics_base_link" />
       <child link="${prefix}first_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0.0" upper="0.872664" velocity="2.0" effort="1000" />
+      <limit lower="0.0" upper="0.872664" velocity="100.0" effort="1000" />
     </joint>
   </xacro:macro>
 
@@ -45,8 +56,8 @@
       <parent link="${prefix}softmatics_base_link" />
       <child link="${prefix}second_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0.0" upper="0.872664" velocity="2.0" effort="1000" />
-    <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
+      <limit lower="0.0" upper="0.872664" velocity="100.0" effort="1000" />
+      <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
     </joint>
   </xacro:macro>
 
@@ -56,8 +67,8 @@
       <parent link="${prefix}softmatics_base_link" />
       <child link="${prefix}third_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0.0" upper="0.872664" velocity="2.0" effort="1000" />
-    <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
+      <limit lower="0.0" upper="0.872664" velocity="100.0" effort="1000" />
+      <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
     </joint>
   </xacro:macro>
 
@@ -67,8 +78,8 @@
       <parent link="${prefix}softmatics_base_link" />
       <child link="${prefix}fourth_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0.0" upper="0.872664" velocity="2.0" effort="1000" />
-    <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
+      <limit lower="0.0" upper="0.872664" velocity="100.0" effort="1000" />
+      <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
     </joint>
   </xacro:macro>
 
@@ -78,8 +89,8 @@
       <parent link="${prefix}softmatics_base_link" />
       <child link="${prefix}fifth_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0.0" upper="0.872664" velocity="2.0" effort="1000" />
-    <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
+      <limit lower="0.0" upper="0.872664" velocity="100.0" effort="1000" />
+      <mimic joint="${prefix}knuckle_joint" multiplier="1" offset="0" />
     </joint>
   </xacro:macro>
 
@@ -96,5 +107,6 @@
     <xacro:fourth_knuckle_joint prefix="${prefix}"/>
     <xacro:fifth_knuckle_joint prefix="${prefix}"/>
     <xacro:softmatics_transmission prefix="${prefix}"/>
+    <xacro:softmatics_gazebo prefix="${prefix}"/>
   </xacro:macro>
 </robot>

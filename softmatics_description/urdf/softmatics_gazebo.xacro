@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="softmatics_gazebo" params="prefix">
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/softmatics</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin> 
+    </gazebo>
+
+    <gazebo>
+      <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="mimic_${prefix}second_knuckle_joint">
+        <joint>${prefix}knuckle_joint</joint>
+        <mimicJoint>${prefix}second_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <!-- <hasPID /> -->
+      </plugin>
+      <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="mimic_${prefix}third_knuckle_joint">
+        <joint>${prefix}knuckle_joint</joint>
+        <mimicJoint>${prefix}third_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <!-- <hasPID /> -->
+      </plugin>
+      <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="mimic_${prefix}fourth_knuckle_joint">
+        <joint>${prefix}knuckle_joint</joint>
+        <mimicJoint>${prefix}fourth_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <!-- <hasPID /> -->
+      </plugin>
+      <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="mimic_${prefix}fifth_knuckle_joint">
+        <joint>${prefix}knuckle_joint</joint>
+        <mimicJoint>${prefix}fifth_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <!-- <hasPID /> -->
+      </plugin>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

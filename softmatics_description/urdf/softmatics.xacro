@@ -10,7 +10,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://softmatics_description/meshes/visual/base.stl" />
+          <mesh filename="package://softmatics_description/meshes/visual/root.stl" />
         </geometry>
         <material name="">
           <color rgba="0.8 0.8 0.8 1" />
@@ -19,10 +19,57 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://softmatics_description/meshes/collision/base.stl" />
+          <mesh filename="package://softmatics_description/meshes/collision/root.stl" />
         </geometry>
       </collision>
     </link>
+    <link name="${prefix}palm_link">
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <mass value="0.7" />
+        <inertia ixx="1.0E-03" ixy="1.0E-06" ixz="1.0E-06" iyy="1.0E-03" iyz="1.0E-06" izz="1.0E-03" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://softmatics_description/meshes/visual/palm.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.0 0.2 0.7 0.8" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://softmatics_description/meshes/collision/palm.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="world"/>
+    <joint name="joint0" type="fixed">
+      <parent link="world"/>
+      <child link="${prefix}softmatics_base_link"/>
+      <origin xyz= "0. 0. 0." rpy="0. 0. 0." />
+    </joint>
+    <joint name="${prefix}palm_joint" type="fixed">
+      <parent link="${prefix}softmatics_base_link"/>
+      <child link="${prefix}palm_link"/>
+      <origin xyz= "0. 0. 0." rpy="0. 0. 0." />
+    </joint>
+
+    <gazebo reference="${prefix}softmatics_base_link">
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <selfCollide>false</selfCollide>
+      <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="${prefix}palm_link">
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <selfCollide>false</selfCollide>
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
   </xacro:macro>
 
   <xacro:macro name="finger_links" params="prefix fingerprefix">
