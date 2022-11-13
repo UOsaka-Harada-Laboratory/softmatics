@@ -5,11 +5,11 @@
 
 ROS package for [NITTA SOFTmatics](https://www.nitta.co.jp/en/product/robothand/) gripper.
 
-# Dependencies
+## Dependencies
 
 - ROS Noetic (Python3)
 
-# Installation
+## Installation
 
     $ cd catkin_ws/src
 	$ git clone git@github.com:takuya-ki/softmatics.git --depth 1
@@ -17,14 +17,14 @@ ROS package for [NITTA SOFTmatics](https://www.nitta.co.jp/en/product/robothand/
 	$ sudo rosdep update && sudo rosdep install --from-paths ./src --ignore-packages-from-source --rosdistro noetic -y --os=ubuntu:focal -y
 	$ catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
 
-# Usage
+## Usage
 
-## Visualize a model
+### Visualize a model
     $ roslaunch softmatics_description disp_softmatics_model.launch
 
 <img src="softmatics_description/images/softmatics.gif" height="400">  
 
-# Author / Contributor
+## Author / Contributor
 
 [Takuya Kiyokawa](https://takuya-ki.github.io/)
 
