@@ -9,7 +9,7 @@ Note that this repository is not official repository, which is not supported by 
 ## Dependencies
 
 ### Hardware
-<img src=img/system.png width=640>
+<img src=img/system.png width=480>
 
 ### Software
 - ROS Noetic (Python3)
@@ -33,7 +33,7 @@ catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
 roslaunch softmatics_description disp_softmatics_model.launch
 ```
 
-<img src="softmatics_description/images/softmatics_rviz.gif" height="400">  
+<img src="softmatics_description/images/softmatics_rviz.gif" width="400">  
 
 ### Gazebo simulation
 ```
@@ -41,7 +41,7 @@ roslaunch softmatics_gazebo bringup_softmatics_gazebo.launch
 rostopic pub -1 /softmatics/joint_position_controller/command std_msgs/Float64 "data: 0.6"
 ```
 
-<img src="softmatics_description/images/softmatics_gazebo.gif" height="400">  
+<img src="softmatics_description/images/softmatics_gazebo.gif" width="400">  
 
 ### Grasp/release execution
 1. Upload the sketch.ino to the Arduino board
@@ -53,6 +53,7 @@ roslaunch softmatics_device trigger.launch
 ```
 rosservice call /softmatics_device/toggle
 ```
+<img src="img/toggle_4x.gif" width="480">  
 
 ## Author / Contributor
 
