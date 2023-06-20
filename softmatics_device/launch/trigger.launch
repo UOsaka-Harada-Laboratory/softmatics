@@ -1,0 +1,3 @@
+<launch>
+    <node name="trigger" pkg="softmatics_device" type="trigger.py" output="screen"/>
+</launch>
