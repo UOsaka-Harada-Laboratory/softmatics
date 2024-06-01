@@ -17,13 +17,7 @@ Note that this repository is not an official repository, which is not supported 
 ## Installation
 
 ```bash
-cd catkin_ws/src
-git clone git@github.com:takuya-ki/softmatics.git --depth 1
-git clone https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins.git --depth 1
-cd ../
-sudo rosdep update && sudo rosdep install --from-paths ./src --ignore-packages-from-source --rosdistro noetic -y --os=ubuntu:focal -y
-sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers
-catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
+cd catkin_ws/src && git clone git@github.com:takuya-ki/softmatics.git --depth 1 && git clone https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins.git --depth 1 && cd ../ && sudo rosdep update && sudo rosdep install --from-paths ./src --ignore-packages-from-source --rosdistro noetic -y --os=ubuntu:focal -y && sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers && catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
 ```
 
 ## Usage
@@ -38,6 +32,8 @@ roslaunch softmatics_description disp_softmatics_model.launch
 ### Gazebo simulation
 ```bash
 roslaunch softmatics_gazebo bringup_softmatics_gazebo.launch
+```
+```bash
 rostopic pub -1 /softmatics/joint_position_controller/command std_msgs/Float64 "data: 0.6"
 ```
 
