@@ -2,7 +2,7 @@
 
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![repo size](https://img.shields.io/github/repo-size/Osaka-University-Harada-Laboratory/softmatics)
+![repo size](https://img.shields.io/github/repo-size/UOsaka-Harada-Laboratory/softmatics)
 
 ROS package for [NITTA SOFTmatics](https://www.nitta.co.jp/en/product/robothand/) gripper.  
 Note that this repository is not an official repository, which is not supported by Nitta Corporation.
