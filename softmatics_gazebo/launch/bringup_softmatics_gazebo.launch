@@ -25,7 +25,7 @@
         args="-urdf -param robot_description -model softmatics" respawn="false" output="screen" />
 
   <!-- Start up controllers -->
-  <rosparam file="$(find softmatics_control)/config/control_params.yaml" command="load"/>
+  <rosparam file="$(find softmatics_gazebo)/config/control_params.yaml" command="load"/>
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
         respawn="false" output="screen" ns="/softmatics"
         args="joint_state_controller joint_position_controller" />

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(softmatics_device)
 
-find_package(catkin REQUIRED
+find_package(catkin REQUIRED COMPONENTS
   rospy
   std_srvs
 )

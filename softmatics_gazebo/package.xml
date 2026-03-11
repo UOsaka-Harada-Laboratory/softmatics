@@ -10,4 +10,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>gazebo_ros</build_depend>
   <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>softmatics_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
 </package>

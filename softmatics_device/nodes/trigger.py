@@ -1,4 +1,4 @@
-#!/usr/bin/env 3
+#!/usr/bin/env python3
 
 import serial
 
@@ -31,9 +31,10 @@ class SoftmaticsTriggerNode:
             self._ser.write(b"0")  # off
             rospy.sleep(1)
 
+        mode_str = "grasp" if self._current_mode else "release"
         return TriggerResponse(
-            success=None,  # TODO: implement
-            message=None)  # TODO: implement
+            success=True,
+            message="Toggled to {} mode".format(mode_str))
 
 
 if __name__ == '__main__':

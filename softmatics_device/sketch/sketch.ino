@@ -5,8 +5,8 @@ void setup() {
 }
 
 void loop() {
-  byte var;
-  var = Serial.read();
+  if (Serial.available() == 0) return;
+  byte var = Serial.read();
   switch(var){
     case '0':
       digitalWrite(13, LOW);
